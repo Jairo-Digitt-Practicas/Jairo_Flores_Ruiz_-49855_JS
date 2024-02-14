@@ -1,0 +1,375 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Configuración del documento -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Título de la página y descripción para SEO -->
+        <title>IA House | Página Tienda</title>
+        <meta
+            name="description"
+            content="Explora la mejor selección en nuestra tienda en línea. Encuentra productos de calidad, desde moda hasta electrónicos, con envío rápido y servicio al cliente excepcional. Descubre las últimas tendencias y haz tus compras con confianza en IA House." />
+
+        <!-- Ícono de la página -->
+        <link rel="icon" href="../logo.ico" title="logo" />
+
+        <!-- Estilos y fuentes -->
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="../css/bootstrap.css" />
+        <link rel="stylesheet" href="../css/estilos.css" />
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <!-- Barra de navegación -->
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-light fixed-top w-100">
+                <div class="container-fluid">
+                    <a
+                        class="navbar-brand"
+                        href="../index.html"
+                        title="paginaIndex">
+                        <img
+                            src="../assets/imagenes/logo.png"
+                            alt="logo"
+                            title="logo" />
+                    </a>
+
+                    <!-- Botón para navegación en dispositivos móviles -->
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a
+                        href="../pages/carrito.html"
+                        class="btn btn-outline-danger">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-cart"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"></path>
+                        </svg>
+                        Carrito
+                    </a>
+
+                    <!-- Menú de navegación -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul
+                            class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    aria-current="page"
+                                    href="../index.html"
+                                    title="paginaIndex"
+                                    >Inicio</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="../pages/nuestrosProyectos.html"
+                                    title="paginaNuestrosProyectos"
+                                    >Nuestros Proyectos</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    href="../pages/tienda.html"
+                                    >Tienda</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="../pages/cotizaciones.html"
+                                    title="paginaCotizaciones"
+                                    >Cotizaciones</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="../pages/conocenos.html"
+                                    title="paginaConocenos"
+                                    >Conócenos</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <!-- Contenido principal Tienda online-->
+            <section class="hero">
+                <img
+                    src="../assets/imagenes/headerTienda.png"
+                    alt="headerTienda"
+                    class="contentSectionTienda"
+                    title="headerTienda" />
+                <h1>Compra todos tus produtos y convierte tu hogar</h1>
+                <ins>
+                    <h2>
+                        <p>
+                            Compra todos nuestros productos y vuelve tu casa
+                            inteligente, con cada compra recibe 7 días de
+                            asistencia para la instalación de cada uno de tus
+                            aparatos.
+                        </p>
+                    </h2>
+                </ins>
+            </section>
+            <section>
+                <div class="productos">
+                    <div
+                        class="row row-cols-1 row-cols-md-3 mb-3 text-center"
+                        id="contenedor-cards">
+                        <!-- Aquí se agregarán dinámicamente las filas de los productos del carrito -->
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer
+            class="text-center text-white"
+            style="background-color: rgb(10, 5, 243)">
+            <div class="botonWhatsApp">
+                <a
+                    href="https://www.whatsapp.com/?lang=es_LA"
+                    target="_blank"
+                    title="paginaWA">
+                    <img
+                        src="../assets/imagenes/whatsapp.svg"
+                        alt="WhatsApp"
+                        title="imagenWA" />
+                </a>
+            </div>
+            <section class="d-flex justify-content-center p-4 border-bottom">
+                <div class="me-5 d-none d-lg-block text-center">
+                    <span>Conéctate con nosotros en las redes sociales:</span>
+                </div>
+                <div>
+                    <a
+                        href="https://www.facebook.com"
+                        target="_blank"
+                        class="me-4 text-reset"
+                        title="paginaFacebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a
+                        href="https://www.twitter.com"
+                        target="_blank"
+                        class="me-4 text-reset"
+                        title="paginaTwitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a
+                        href="https://www.instagram.com"
+                        target="_blank"
+                        class="me-4 text-reset"
+                        title="paginaInstagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a
+                        href="https://www.linkedin.com"
+                        target="_blank"
+                        class="me-4 text-reset"
+                        title="paginaLinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </section>
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <img
+                            src="../assets/imagenes/marca.png"
+                            alt="logo"
+                            title="imagenMarca" />
+                        <p>
+                            Todos nuestros servicios y productos son realizados
+                            y entregados por expertos en los temas de
+                            mantenimiento y conocen a detalle las
+                            funcionalidades necesarias de los mismos. Si tienes
+                            alguna duda, no dudes en consultarla, y así te
+                            podremos asesorar.
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h5 class="text-uppercase fw-bold mb-4">
+                            Otros enlaces
+                        </h5>
+                        <ins>
+                            <p>
+                                <a href="../pages/404.html" class="enlace"
+                                    >Artículos y noticias</a
+                                >
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <a href="../pages/404.html" class="enlace"
+                                    >Política de Privacidad</a
+                                >
+                            </p>
+                        </ins>
+                        <h5 class="text-uppercase fw-bold mb-4">
+                            Horarios de atención
+                        </h5>
+                        <p>
+                            9 AM - 5 PM, Lunes - Sábado, Horarios de la Ciudad
+                            de México
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h5 class="text-uppercase fw-bold mb-4">
+                            Enlaces rápidos
+                        </h5>
+                        <ins>
+                            <p>
+                                <a
+                                    href="../index.html"
+                                    class="enlace"
+                                    title="paginaIndex"
+                                    >Inicio</a
+                                >
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <a
+                                    href="../pages/nuestrosProyectos.html"
+                                    class="enlace"
+                                    title="paginaNuestrosProyectos"
+                                    >Nuestros proyectos</a
+                                >
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <a
+                                    href="../pages/tienda.html"
+                                    class="enlace"
+                                    title="paginaTienda"
+                                    >Tienda</a
+                                >
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <a
+                                    href="../pages/cotizaciones.html"
+                                    class="enlace"
+                                    title="paginaCotizaciones"
+                                    >Cotizaciones</a
+                                >
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <a
+                                    href="../pages/conocenos.html"
+                                    class="enlace"
+                                    title="paginaConocenos"
+                                    >Conócenos</a
+                                >
+                            </p>
+                        </ins>
+                    </div>
+                    <div
+                        class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h5 class="text-uppercase fw-bold mb-4">Contacto</h5>
+                        <p>
+                            <i class="fas fa-home me-3"></i> Calle Lázaro
+                            Cárdenas 6484, Colonia Zona Industrial, Guadalajara,
+                            Jalisco C.P. 44940
+                        </p>
+                        <ins>
+                            <p>
+                                <i class="fas fa-envelope me-3"></i>
+                                <a
+                                    href="mailto:contacto@iahouse.com"
+                                    class="enlace"
+                                    title="correo"
+                                    >contacto@iahouse.com</a
+                                >
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <i class="fas fa-phone me-3"></i>
+                                <a
+                                    href="tel:3315455448"
+                                    class="enlace"
+                                    title="telefono"
+                                    >33 1545 5448
+                                </a>
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <i class="fab fa-whatsapp me-3"></i>
+                                <a
+                                    href="fax://3315455448"
+                                    class="enlace"
+                                    title="fax"
+                                    >33 1545 5448</a
+                                >
+                            </p>
+                        </ins>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="text-center p-4"
+                style="background-color: rgba(0, 0, 0, 0.05)">
+                <ins>
+                    © 2023 Copyright:
+                    <a
+                        class="text-reset fw-bold"
+                        target="_blank"
+                        href="https://github.com/Jairo-Digitt-Practicas?tab=repositories"
+                        title="autor"
+                        >Jairo Flores Ruiz</a
+                    >
+                </ins>
+            </div>
+        </footer>
+
+        <!-- Incluye Bootstrap JS desde el CDN con su integridad y atributo crossorigin -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+        <!-- Incluye la biblioteca AOS (Animate on Scroll) desde el CDN -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <!-- Inicializa la biblioteca AOS para agregar efectos de animación al desplazarse -->
+        <script>
+            AOS.init();
+        </script>
+        <script src="../js/main.js"></script>
+    </body>
+</html>

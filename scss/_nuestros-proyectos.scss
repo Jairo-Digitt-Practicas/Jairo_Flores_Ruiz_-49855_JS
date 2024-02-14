@@ -1,0 +1,75 @@
+/** @format */
+.row {
+    margin-inline: $tamanio-20px;
+}
+.video {
+    text-align: $centrado-componentes;
+    padding-top: $tamanio-40px;
+}
+.videoIframe {
+    width: $tamanio-50;
+    height: $tamanio-500px;
+    overflow: $overflow-hidden;
+    margin-left: $tamanio-10px;
+    margin-right: $tamanio-10px;
+
+    .visitanos {
+        padding: $tamanio-20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contentSectionNuestros {
+        background-image: url("../assets/imagenes/headersMovil/headerNuestrosProyectosMovil.png");
+        height: 200px;
+    }
+}
+
+@media (min-width: 770px) {
+    .contentSectionNuestros {
+        background-image: url("../assets/imagenes/headerNuestrosProyectos.png");
+        width: $tamanio-100;
+    }
+}
+
+@media (min-width: 576px) {
+    .videoIframe {
+        height: $tamanio-500px;
+        .row {
+            margin-inline: none;
+        }
+    }
+}
+@media (min-width: 768px) {
+    .videoIframe {
+        height: $tamanio-500px;
+        .row {
+            margin-inline: none;
+        }
+    }
+}
+@media (min-width: 992px) {
+    .videoIframe {
+        height: $tamanio-600px;
+    }
+}
+@media (min-width: 1200px) {
+    .videoIframe {
+        height: $tamanio-700px;
+    }
+}
+@media (min-width: 1400px) {
+    .videoIframe {
+        height: $tamanio-800px;
+    }
+}
+
+.container {
+    max-width: $tamanio-960px;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: $tamanio-3mediorem;
+    }
+}

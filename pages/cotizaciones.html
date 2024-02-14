@@ -1,0 +1,563 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Configuración del documento -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Título de la página y descripción para SEO -->
+        <title>IA House | Página Cotizaciones</title>
+        <meta
+            name="description"
+            content="Obtén cotizaciones personalizadas en IA House. Especializados en soluciones a medida, te ofrecemos productos y servicios de alta calidad que se ajustan a tu presupuesto. ¡Solicita hoy y descubre cómo superamos tus expectativas!" />
+
+        <!-- Ícono de la página -->
+        <link rel="icon" href="../logo.ico" title="logo" />
+
+        <!-- Estilos y fuentes -->
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/estilos.css" />
+    </head>
+    <body>
+        <header>
+            <!-- Barra de navegación -->
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-light fixed-top w-100">
+                <div class="container-fluid">
+                    <a
+                        class="navbar-brand"
+                        href="../index.html"
+                        title="paginaIndex">
+                        <img
+                            src="../assets/imagenes/logo.png"
+                            alt="logo"
+                            title="logo" />
+                    </a>
+
+                    <!-- Botón para navegación en dispositivos móviles -->
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a
+                        href="../pages/carrito.html"
+                        class="btn btn-outline-danger">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-cart"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"></path>
+                        </svg>
+                        Carrito
+                    </a>
+
+                    <!-- Menú de navegación -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul
+                            class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    aria-current="page"
+                                    href="../index.html"
+                                    title="paginaIndex"
+                                    >Inicio</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="../pages/nuestrosProyectos.html"
+                                    title="paginaNuestrosProyectos"
+                                    >Nuestros Proyectos</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="../pages/tienda.html"
+                                    title="paginaTienda"
+                                    >Tienda</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    href="../pages/cotizaciones.html"
+                                    title="paginaCotizaciones"
+                                    >Cotizaciones</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="../pages/conocenos.html"
+                                    title="paginaConocenos"
+                                    >Conócenos</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <!-- Contenido principal -->
+            <section class="hero">
+                <img
+                    src="../assets/imagenes/headerCotizaciones.png"
+                    alt="headerCotizaciones"
+                    class="contentSectionCotizaciones"
+                    title="headerCotizaciones" />
+                <h1>¿Quieres saber cómo desarrollar tu proyecto?</h1>
+                <ins>
+                    <h2>
+                        <p>
+                            Agenda tu cita para evaluar tu proyecto y resolver
+                            tus dudas de manera gratuita, el día y la hora que
+                            elijas aquí:
+                        </p>
+                    </h2>
+                </ins>
+            </section>
+            <!--Formulario-->
+            <div class="cotizaciones">
+                <h3>Agenda tu cita</h3>
+                <form class="row g-3">
+                    <div class="col-12">
+                        <label for="inputName" class="form-label"
+                            >Nombre completo</label
+                        >
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="inputName"
+                            placeholder="Ingrese su nombre completo"
+                            required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputTelefono" class="form-label"
+                            >Telefono</label
+                        >
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="inputTelefono"
+                            placeholder="3351258462"
+                            required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label"
+                            >Email</label
+                        >
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="inputEmail4"
+                            required />
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label"
+                            >Dirección completa</label
+                        >
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="inputCiudad"
+                            placeholder="1351 Lopez, Zona industrial, C.P, Jalisco, Mexico"
+                            required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCiudad" class="form-label"
+                            >Ciudad</label
+                        >
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="inputCiudad"
+                            required />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputEstado" class="form-label" required
+                            >Estado</label
+                        >
+                        <select
+                            name="estado"
+                            id="estado"
+                            class="form-control"
+                            required>
+                            <option value="" disabled selected>
+                                Selecciona un estado
+                            </option>
+                            <option value="Aguascalientes">
+                                Aguascalientes
+                            </option>
+                            <option value="Baja California">
+                                Baja California
+                            </option>
+                            <option value="Baja California Sur">
+                                Baja California Sur
+                            </option>
+                            <option value="Campeche">Campeche</option>
+                            <option value="Chiapas">Chiapas</option>
+                            <option value="Chihuahua">Chihuahua</option>
+                            <option value="Coahuila">Coahuila</option>
+                            <option value="Colima">Colima</option>
+                            <option value="Durango">Durango</option>
+                            <option value="Guanajuato">Guanajuato</option>
+                            <option value="Guerrero">Guerrero</option>
+                            <option value="Hidalgo">Hidalgo</option>
+                            <option value="Jalisco">Jalisco</option>
+                            <option value="México">México</option>
+                            <option value="Michoacán">Michoacán</option>
+                            <option value="Morelos">Morelos</option>
+                            <option value="Nayarit">Nayarit</option>
+                            <option value="Nuevo León">Nuevo León</option>
+                            <option value="Oaxaca">Oaxaca</option>
+                            <option value="Puebla">Puebla</option>
+                            <option value="Querétaro">Querétaro</option>
+                            <option value="Quintana Roo">Quintana Roo</option>
+                            <option value="San Luis Potosí">
+                                San Luis Potosí
+                            </option>
+                            <option value="Sinaloa">Sinaloa</option>
+                            <option value="Sonora">Sonora</option>
+                            <option value="Tabasco">Tabasco</option>
+                            <option value="Tamaulipas">Tamaulipas</option>
+                            <option value="Tlaxcala">Tlaxcala</option>
+                            <option value="Veracruz">Veracruz</option>
+                            <option value="Yucatán">Yucatán</option>
+                            <option value="Zacatecas">Zacatecas</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputDescripcion" class="form-label"
+                            >Describe brevemente tus necesidades o idea de
+                            proyecto</label
+                        >
+                        <textarea
+                            class="form-control"
+                            id="inputDescripcion"
+                            rows="3"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="gridCheck"
+                                required />
+                            <label
+                                class="form-check-label"
+                                for="gridCheck"
+                                required>
+                                He leído y acepto la Política de Privacidad
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">
+                            Enviar cotización
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <section>
+                <!--FAQS-->
+                <div class="faqs">
+                    <h4 class="text-center mb-4 pb-2 text-primary fw-bold">
+                        Preguntas más frecuentes
+                    </h4>
+                    <p class="text-center mb-5">
+                        Encuentre las respuestas a las preguntas más frecuentes
+                        a continuación
+                    </p>
+
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <h5 class="mb-3 text-primary">
+                                <i
+                                    class="far fa-paper-plane text-primary pe-2"></i>
+                                ¿La domótica es costosa?
+                            </h5>
+                            <p>
+                                <strong><u>¡En lo absoluto!</u></strong> Solo es
+                                costosa cuando los beneficios que recibes no son
+                                los que esperas por el precio que te dan. Es por
+                                eso que nosotros le generamos al cliente una
+                                perspectiva del proyecto donde vean con claridad
+                                los beneficios que obtienen y las soluciones que
+                                se merecen.
+                            </p>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <h5 class="mb-3 text-primary">
+                                <i class="fas fa-pen-alt text-primary pe-2"></i>
+                                ¿Se puede dar un costo aproximado de una
+                                instalación?
+                            </h5>
+                            <p>
+                                <strong><u>No es lo más recomendado</u></strong>
+                                Hacerlo sin un estudio previo no sería adecuado.
+                                Antes que nada debemos entender lo que necesitas
+                                a través de un levantamiento que permite
+                                identificar qué equipos son los adecuados para
+                                ti, en qué zonas o espacios quieres hacer la
+                                integración tecnológica, qué distancias vamos a
+                                cubrir, etc.
+                                <br />
+                                Esto nos permitirá saber cómo cumplir con todos
+                                tus requerimientos, darte un costo y empezar a
+                                brindarte el mejor servicio.
+                            </p>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <h5 class="mb-3 text-primary">
+                                <i class="fas fa-user text-primary pe-2"></i>
+                                ¿Los sistemas son muy complicados de utilizar?
+                            </h5>
+                            <p>
+                                <strong><u>Para nada.</u></strong>
+                                El sistema está pensado para que puedan usarlo
+                                desde tus hijos hasta los abuelos, con
+                                interfaces muy amigables, sencillas y cómodas de
+                                utilizar. Todos notarán que te preocupas por su
+                                bienestar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer
+            class="text-center text-white"
+            style="background-color: rgb(10, 5, 243)">
+            <div class="botonWhatsApp">
+                <a
+                    href="https://www.whatsapp.com/?lang=es_LA"
+                    target="_blank"
+                    title="paginaWA">
+                    <img
+                        src="../assets/imagenes/whatsapp.svg"
+                        alt="WhatsApp"
+                        title="imagenWA" />
+                </a>
+            </div>
+            <section class="d-flex justify-content-center p-4 border-bottom">
+                <div class="me-5 d-none d-lg-block text-center">
+                    <span>Conéctate con nosotros en las redes sociales:</span>
+                </div>
+                <div>
+                    <a
+                        href="https://www.facebook.com"
+                        target="_blank"
+                        class="me-4 text-reset"
+                        title="paginaFacebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a
+                        href="https://www.twitter.com"
+                        target="_blank"
+                        class="me-4 text-reset"
+                        title="paginaTwitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a
+                        href="https://www.instagram.com"
+                        target="_blank"
+                        class="me-4 text-reset"
+                        title="paginaInstagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a
+                        href="https://www.linkedin.com"
+                        target="_blank"
+                        class="me-4 text-reset"
+                        title="paginaLinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </section>
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <img
+                            src="../assets/imagenes/marca.png"
+                            alt="logo"
+                            title="imagenMarca" />
+                        <p>
+                            Todos nuestros servicios y productos son realizados
+                            y entregados por expertos en los temas de
+                            mantenimiento y conocen a detalle las
+                            funcionalidades necesarias de los mismos. Si tienes
+                            alguna duda, no dudes en consultarla, y así te
+                            podremos asesorar.
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h5 class="text-uppercase fw-bold mb-4">
+                            Otros enlaces
+                        </h5>
+                        <ins>
+                            <p>
+                                <a href="../pages/404.html" class="enlace"
+                                    >Artículos y noticias</a
+                                >
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <a href="../pages/404.html" class="enlace"
+                                    >Política de Privacidad</a
+                                >
+                            </p>
+                        </ins>
+                        <h5 class="text-uppercase fw-bold mb-4">
+                            Horarios de atención
+                        </h5>
+                        <p>
+                            9 AM - 5 PM, Lunes - Sábado, Horarios de la Ciudad
+                            de México
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h5 class="text-uppercase fw-bold mb-4">
+                            Enlaces rápidos
+                        </h5>
+                        <ins>
+                            <p>
+                                <a
+                                    href="../index.html"
+                                    class="enlace"
+                                    title="paginaIndex"
+                                    >Inicio</a
+                                >
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <a
+                                    href="../pages/nuestrosProyectos.html"
+                                    class="enlace"
+                                    title="paginaNuestrosProyectos"
+                                    >Nuestros proyectos</a
+                                >
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <a
+                                    href="../pages/tienda.html"
+                                    class="enlace"
+                                    title="paginaTienda"
+                                    >Tienda</a
+                                >
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <a
+                                    href="../pages/cotizaciones.html"
+                                    class="enlace"
+                                    title="paginaCotizaciones"
+                                    >Cotizaciones</a
+                                >
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <a
+                                    href="../pages/conocenos.html"
+                                    class="enlace"
+                                    title="paginaConocenos"
+                                    >Conócenos</a
+                                >
+                            </p>
+                        </ins>
+                    </div>
+                    <div
+                        class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h5 class="text-uppercase fw-bold mb-4">Contacto</h5>
+                        <p>
+                            <i class="fas fa-home me-3"></i> Calle Lázaro
+                            Cárdenas 6484, Colonia Zona Industrial, Guadalajara,
+                            Jalisco C.P. 44940
+                        </p>
+                        <ins>
+                            <p>
+                                <i class="fas fa-envelope me-3"></i>
+                                <a
+                                    href="mailto:contacto@iahouse.com"
+                                    class="enlace"
+                                    title="correo"
+                                    >contacto@iahouse.com</a
+                                >
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <i class="fas fa-phone me-3"></i>
+                                <a
+                                    href="tel:3315455448"
+                                    class="enlace"
+                                    title="telefono"
+                                    >33 1545 5448
+                                </a>
+                            </p>
+                        </ins>
+                        <ins>
+                            <p>
+                                <i class="fab fa-whatsapp me-3"></i>
+                                <a
+                                    href="fax://3315455448"
+                                    class="enlace"
+                                    title="fax"
+                                    >33 1545 5448</a
+                                >
+                            </p>
+                        </ins>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="text-center p-4"
+                style="background-color: rgba(0, 0, 0, 0.05)">
+                <ins>
+                    © 2023 Copyright:
+                    <a
+                        class="text-reset fw-bold"
+                        target="_blank"
+                        href="https://github.com/Jairo-Digitt-Practicas?tab=repositories"
+                        title="autor"
+                        >Jairo Flores Ruiz</a
+                    >
+                </ins>
+            </div>
+        </footer>
+        <!-- Incluye Bootstrap JS desde el CDN con su integridad y atributo crossorigin -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    </body>
+</html>

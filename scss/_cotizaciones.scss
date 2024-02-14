@@ -1,0 +1,24 @@
+/** @format */
+
+.cotizaciones {
+    margin: $tamanio-20px;
+    border: map-get($border, border-solid-dospx-primario);
+    padding: $tamanio-20px;
+}
+.faqs {
+    margin: $tamanio-20px;
+}
+
+@media (max-width: 576px) {
+    .contentSectionCotizaciones {
+        background-image: url("../assets/imagenes/headersMovil/headerCotizacionesMovil.avif");
+        height: 200px;
+    }
+}
+
+@media (min-width: 770px) {
+    .contentSectionCotizaciones {
+        background-image: url("../assets/imagenes/headerCotizaciones.png");
+        width: $tamanio-100;
+    }
+}
