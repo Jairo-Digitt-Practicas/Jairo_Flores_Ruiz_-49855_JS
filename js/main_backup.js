@@ -1,127 +1,302 @@
 /** @format */
 
-let name;
-let selectedProduct;
-let quantity;
-let selectTerm;
-
 let productsArray = [
-    { name: "Echo Dot 1° generación $999.00", precio: 999, id: 1 },
-    { name: "Echo Dot 3° generación $1,600.00", precio: 1600, id: 2 },
-    { name: "Echo Dot 5° generación $2,500.00", precio: 2500, id: 3 },
-    { name: "Generador de hologramas $1,999.00", precio: 1999, id: 4 },
-    { name: "Luz RGB $300.00", precio: 300, id: 5 },
-    { name: "Enchufe inteligente $400.00", precio: 400, id: 6 },
-    { name: "Quiero buscar mi producto por el nombre", id: 7 },
+    {
+        name: "Echo Dot 1° generación",
+        precio: 999,
+        id: 1,
+        formato: "Producto",
+        img: "../assets/imagenes/Productos/Eco Dot 1° generación.png",
+        especificaciones1: "Facil de instalar",
+        especificaciones2: "Controla tus dispositivos con tu voz",
+        especificaciones3: "Se enlaza con tu asistente (alexa)",
+        especificaciones4: "Reproduce musica",
+    },
+    {
+        name: "Echo Dot 3° generación",
+        precio: 1600,
+        id: 2,
+        formato: "Producto",
+        img: "../assets/imagenes/Productos/Eco Dot 3° generación.png",
+        especificaciones1: "Facil de instalar",
+        especificaciones2: "Controla tus dispositivos con tu voz",
+        especificaciones3: "Se enlaza con tu asistente (alexa)",
+        especificaciones4: "Excelente audio",
+    },
+    {
+        name: "Echo Dot 5° generación",
+        precio: 2500,
+        id: 3,
+        formato: "Producto",
+        img: "../assets/imagenes/Productos/Eco Dot 5° generación.png",
+        especificaciones1: "Facil de instalar",
+        especificaciones2: "Controla tus dispositivos con tu voz",
+        especificaciones3: "Se enlaza con tu asistente (alexa)",
+        especificaciones4: "Enlaza tu sistema de vigilancia",
+    },
+    {
+        name: "Gen de hologramas",
+        precio: 1999,
+        id: 4,
+        formato: "Producto",
+        img: "../assets/imagenes/Productos/Generador de hologramas.png",
+        especificaciones1: "Haz tus propios diseños",
+        especificaciones2: "Solo conecta y disfruta",
+        especificaciones3: "Se enlaza con tu asistente (alexa)",
+        especificaciones4: "Disfruta de sus efectos con audio",
+    },
+    {
+        name: "Luz RGB",
+        precio: 300,
+        id: 5,
+        formato: "Producto",
+        img: "../assets/imagenes/Productos/Luz RGB.png",
+        especificaciones1: "Facil de instalar",
+        especificaciones2: "Disfruta de sus efectos",
+        especificaciones3: "Controla con tu asistente (alexa)",
+        especificaciones4: "25 efectos pre-instalados y cargo los propios",
+    },
+    {
+        name: "Enchufe inteligente",
+        precio: 400,
+        id: 6,
+        formato: "Producto",
+        img: "../assets/imagenes/Productos/Enchufe inteligente.jpg",
+        especificaciones1: "Facil de instalar",
+        especificaciones2: "Controla tus dispositivos con tu voz",
+        especificaciones3: "Se enlaza con tu asistente (alexa)",
+        especificaciones4: "Control ante descargas",
+    },
 ];
 
-function saludar() {
-    name = prompt("¡¡Hola!! Veo que quieres comprar algo, ¿cómo te llamas?");
-    alert(
-        "Hola " +
-            name +
-            ", selecciona el producto que te interesa con el número del producto"
-    );
+let carritoDeCompras = [];
 
-    selectProduct();
+let productoSeleccionado;
+function addProductsToCarrito(index) {
+    productoSeleccionado = productsArray[index];
+    carritoDeCompras.push(productoSeleccionado);
+    localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
+
+    actualizarCarritoHTML();
 }
 
-function selectProduct() {
-    let productOptions = "";
-    for (let i = 0; i < productsArray.length; i++) {
-        productOptions += i + 1 + ". " + productsArray[i].name + "\n";
-    }
+function deleteProductsToCarrito(index) {
+    productoSeleccionado = productsArray[index];
+    carritoDeCompras.splice(index, 1);
+    localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
 
-    let selectedProductId = prompt(
-        "¿Cuál de los siguientes productos te interesa comprar?\n" +
-            productOptions
-    );
+    actualizarCarritoHTML();
 
-    selectedProductId = parseInt(selectedProductId);
-    if (selectedProductId >= 1 && selectedProductId <= 7) {
-        if (selectedProductId === 7) {
-            filterProducts();
-            selectProduct();
-        } else {
-            selectedProduct = productsArray[selectedProductId - 1];
-            alert(name + " seleccionaste " + selectedProduct.name);
-            enterQuantity();
-        }
-    } else {
-        alert("Seleccionaste un número de producto no válido.");
-    }
+    totalCost = calcularTotalCost(carritoDeCompras);
+    let costoConEnvio = totalCost + envio;
+
+    imprimeValorCompra(totalCost);
+    imprimeValorCompraConEnvio(costoConEnvio);
+
+    console.log("Producto borrado al carrito:", productoSeleccionado);
 }
 
-function filterProducts() {
-    const searchProduct = prompt("Escribe el nombre del producto que buscas:");
-
-    const foundProducts = productsArray.filter((product) => {
-        return product.name.toLowerCase().includes(searchProduct.toLowerCase());
-    });
-
-    if (foundProducts.length > 0) {
-        let message = "Los productos encontrados son:\n";
-        foundProducts.forEach((product) => {
-            message += `${product.id}. ${product.name}\n`;
-        });
-        alert(message);
-    } else {
-        alert("No se encontraron productos con ese nombre.");
+function calcularTotalCost(carrito) {
+    let total = 0;
+    for (let i = 0; i < carrito.length; i++) {
+        total += carrito[i].precio;
     }
+    return total;
 }
 
-function enterQuantity() {
-    quantity = prompt(
-        "¿Cuántos productos de " +
-            selectedProduct.name +
-            " te interesa comprar?"
-    );
+function actualizarCarsHTML() {
+    let div = document.getElementById("contenedor-cards");
 
-    quantity = parseInt(quantity);
-    if (isNaN(quantity) || quantity <= 0) {
-        alert("Por favor, ingresa una cantidad válida.");
-        enterQuantity();
+    if (!div) {
+        console.error(
+            "El elemento contenedor-productos no se encontró en el DOM."
+        );
         return;
     }
 
-    alert("Perfecto, el total será $" + selectedProduct.precio * quantity);
-    calculateTerm();
+    div.innerHTML = "";
+
+    productsArray.forEach(function (producto, index) {
+        div.innerHTML += `
+        <div
+            class="col"
+            data-aos="fade-right"
+            data-aos-duration="3000">
+            <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <img class="imagenProducto" src="${producto.img}" />
+                <h3 class="my-0 fw-normal">${producto.name}</h3>
+            </div>
+            <div class="cardProducto">
+                <h4 class="card-title pricing-card-title">$ ${producto.precio}</h4>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>${producto.especificaciones1}</li>
+                    <li>${producto.especificaciones2}</li>
+                    <li>${producto.especificaciones3}</li>
+                    <li>${producto.especificaciones4}</li>
+                </ul>
+                <button id="btn-add-product-${index}" onclick="addProductsToCarrito(${index})" class="w-100 btn btn-lg btn-outline-primary">Agregar al carrito</button>
+            </div>
+        </div>
+        </div>
+        </div>
+        `;
+    });
+    const btnAlert0 = document.getElementById("btn-add-product-0");
+    btnAlert0.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert1 = document.getElementById("btn-add-product-1");
+    btnAlert1.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert2 = document.getElementById("btn-add-product-2");
+    btnAlert2.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert3 = document.getElementById("btn-add-product-3");
+    btnAlert3.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert4 = document.getElementById("btn-add-product-4");
+    btnAlert4.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert5 = document.getElementById("btn-add-product-5");
+    btnAlert5.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
 }
 
-function calculateTerm() {
-    let amountPayable = selectedProduct.precio * quantity;
-
-    if (amountPayable >= 1 && amountPayable <= 999) {
-        selectTerm = 2;
-    } else if (amountPayable >= 1000 && amountPayable <= 2000) {
-        selectTerm = 3;
-    } else if (amountPayable >= 2001 && amountPayable <= 3500) {
-        selectTerm = 6;
-    } else if (amountPayable >= 3501 && amountPayable <= 5000) {
-        selectTerm = 9;
-    } else if (amountPayable >= 5001) {
-        selectTerm = 12;
+function actualizarCarritoHTML() {
+    let tbody = document.querySelector("#contenedor-productos");
+    if (tbody) {
+        tbody.innerHTML = "";
+    } else {
+        console.error("El elemento tbody no se encontró en el DOM.");
+        return;
     }
 
-    enterTerm();
+    carritoDeCompras.forEach(function (producto, index) {
+        let row = document.createElement("tr");
+        row.innerHTML = `
+        <th scope="row">
+            <div class="d-flex align-items-center">
+                <img src="${producto.img}" class="img-fluid rounded-3"
+                style="width: 120px;" alt="Book">
+                <div class="flex-column ms-4">
+                    <p class="mb-2">${producto.name}</p>
+                </div>
+            </div>
+        </th>
+        <td class="align-middle">
+            <p class="mb-0" style="font-weight: 500">${producto.formato}</p>
+        </td>
+        <td class="align-middle">
+            <p class="mb-0" style="font-weight: 500">$${producto.precio}</p>
+        </td>
+        <button type="button" class="btn btn-outline-danger" onclick="deleteProductsToCarrito(${index})">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"></path>
+                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"></path>
+                </svg>
+        </button>
+    `;
+        tbody.appendChild(row);
+    });
 }
 
-function enterTerm() {
-    let chosenTerm = prompt(
-        "Selecciona el plazo de pago entre " + selectTerm + " y 1"
+window.onload = function () {
+    let carritoGuardado = localStorage.getItem("carritoDeCompras");
+    if (carritoGuardado) {
+        carritoDeCompras = JSON.parse(carritoGuardado);
+        actualizarCarritoHTML();
+    }
+};
+
+let totalCost = 0;
+let carritoDeComprasGuardado = localStorage.getItem("carritoDeCompras");
+
+if (carritoDeComprasGuardado) {
+    carritoDeCompras = JSON.parse(carritoDeComprasGuardado);
+
+    for (let i = 0; i < carritoDeCompras.length; i++) {
+        totalCost += carritoDeCompras[i].precio;
+    }
+    imprimeValorCompra(totalCost);
+
+    console.log("Costo total del carrito de compras:", totalCost);
+} else {
+    console.log("No se encontró el carrito de compras en el localStorage.");
+}
+
+function imprimeValorCompra(totalCost) {
+    let totalCostoCompra = document.getElementById("contenedor-saldos");
+
+    if (!totalCostoCompra) {
+        console.error(
+            "El elemento contenedor-saldos no se encontró en el DOM."
+        );
+        return;
+    }
+
+    totalCostoCompra.innerHTML = "";
+
+    totalCostoCompra.innerHTML += `
+            <p class="mb-2">Subtotal</p>
+            <p class="mb-2">$${totalCost}.00</p>
+    `;
+}
+
+let envio = 300;
+let costoConEnvio = totalCost + envio;
+console.log(costoConEnvio);
+
+function imprimeValorCompraConEnvio(costoConEnvio) {
+    let totalCostoCompraEnvio = document.getElementById(
+        "contenedor-saldosEnvio"
     );
 
-    chosenTerm = parseInt(chosenTerm);
-
-    if (isNaN(chosenTerm) || (chosenTerm !== selectTerm && chosenTerm !== 1)) {
-        alert("Por favor, ingresa un plazo válido: " + selectTerm + " o 1.");
-        enterTerm();
-    } else {
-        alert(
-            "Perfecto, pagarás en " +
-                chosenTerm +
-                " mensualidades de un monto de $" +
-                (selectedProduct.precio * quantity) / chosenTerm
+    if (!totalCostoCompraEnvio) {
+        console.error(
+            "El elemento contenedor-saldos no se encontró en el DOM."
         );
+        return;
     }
+
+    totalCostoCompraEnvio.innerHTML = "";
+
+    totalCostoCompraEnvio.innerHTML += `
+            <p class="mb-2">Total (Impuestos incluidos)</p>
+            <p class="mb-2">$${costoConEnvio}.00</p>
+    `;
+
+    actualizarCarritoHTML();
 }
+
+actualizarCarsHTML();
+imprimeValorCompraConEnvio(costoConEnvio);
