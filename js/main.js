@@ -13,7 +13,7 @@ function addProductsToCarrito(index) {
     console.log("Producto añadido al carrito:", productoSeleccionado);
 }
 
-function actualizarCarsHTML() {
+function actualizarCarsHTML(allProducts) {
     let div = document.getElementById("contenedor-cards");
 
     if (!div) {
@@ -25,30 +25,34 @@ function actualizarCarsHTML() {
 
     div.innerHTML = "";
 
-    productsArray.forEach(function (producto, index) {
+    allProducts.forEach(function (producto, index) {
         div.innerHTML += `
             <div
-                class="col"
+                class="col aos-init aos-animate"
                 data-aos="fade-right"
                 data-aos-duration="3000">
                 <div class="card mb-4 rounded-3 shadow-sm">
-                <div class="card-header py-3">
-                    <img class="card-img-top" src="${producto.image}" />
-                    <h3 class="my-0 fw-normal">${producto.title}</h3>
+                    <div class="card-header py-3">
+                        <img class="imagenProducto" src="${producto.image}" />
+                        <h3 class="my-0 fw-normal">${producto.title}</h3>
+                    </div>
+                    <div class="cardProducto">
+                        <h4 class="card-title pricing-card-title">$ ${
+                            producto.price
+                        }</h4>
+                        <ul class="list-unstyled mt-3 mb-4">
+                                <li>${producto.description}</li>
+                        </ul>
+                        <button id="btn-add-product-${
+                            producto.id - 1
+                        }" onclick="addProductsToCarrito(${
+            producto.id - 1
+        })" class="w-100 btn btn-lg btn-outline-primary">Agregar al carrito</button>
+                    </div>
                 </div>
-                <div class="cardProducto">
-                    <h4 class="card-title pricing-card-title">$ ${producto.price}</h4>
-                    <ul class="list-unstyled mt-3 mb-4">
-                            <li>${producto.description}</li>
-                    </ul>
-                    <button id="btn-add-product-${index}" onclick="addProductsToCarrito(${index})" class="w-100 btn btn-lg btn-outline-primary">Agregar al carrito</button>
-                </div>
-            </div>
-            </div>
             </div>
             `;
     });
-
     const btnAlert0 = document.getElementById("btn-add-product-0");
     btnAlert0.addEventListener("click", () => {
         Toastify({
@@ -89,8 +93,120 @@ function actualizarCarsHTML() {
             duration: 3000,
         }).showToast();
     });
-    const btnAlert5 = document.getElementById("btn-add-product-5");
-    btnAlert5.addEventListener("click", () => {
+    const btnAlert6 = document.getElementById("btn-add-product-6");
+    btnAlert6.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert7 = document.getElementById("btn-add-product-7");
+    btnAlert7.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert8 = document.getElementById("btn-add-product-8");
+    btnAlert8.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert9 = document.getElementById("btn-add-product-9");
+    btnAlert9.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert10 = document.getElementById("btn-add-product-10");
+    btnAlert10.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert11 = document.getElementById("btn-add-product-11");
+    btnAlert11.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert12 = document.getElementById("btn-add-product-12");
+    btnAlert12.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert13 = document.getElementById("btn-add-product-13");
+    btnAlert13.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert14 = document.getElementById("btn-add-product-14");
+    btnAlert14.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert15 = document.getElementById("btn-add-product-16");
+    btnAlert15.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert16 = document.getElementById("btn-add-product-16");
+    btnAlert16.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert17 = document.getElementById("btn-add-product-17");
+    btnAlert17.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert18 = document.getElementById("btn-add-product-18");
+    btnAlert18.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert19 = document.getElementById("btn-add-product-19");
+    btnAlert19.addEventListener("click", () => {
+        Toastify({
+            text: "Producto agregado",
+
+            duration: 3000,
+        }).showToast();
+    });
+    const btnAlert20 = document.getElementById("btn-add-product-20");
+    btnAlert20.addEventListener("click", () => {
         Toastify({
             text: "Producto agregado",
 
@@ -100,19 +216,26 @@ function actualizarCarsHTML() {
 }
 
 function deleteProductsToCarrito(index) {
-    productoSeleccionado = productsArray[index];
-    carritoDeCompras.splice(index, 1);
-    localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
+    if (index >= 0 && index < carritoDeCompras.length) {
+        const productoSeleccionado = carritoDeCompras[index];
+        carritoDeCompras.splice(index, 1);
+        localStorage.setItem(
+            "carritoDeCompras",
+            JSON.stringify(carritoDeCompras)
+        );
 
-    actualizarCarritoHTML();
+        actualizarCarritoHTML();
 
-    totalCost = calcularTotalCost(carritoDeCompras);
-    let costoConEnvio = totalCost + envio;
+        totalCost = calcularTotalCost(carritoDeCompras);
+        let costoConEnvio = totalCost + envio;
 
-    imprimeValorCompra(totalCost);
-    imprimeValorCompraConEnvio(costoConEnvio);
+        imprimeValorCompra(totalCost);
+        imprimeValorCompraConEnvio(costoConEnvio);
 
-    console.log("Producto borrado al carrito:", productoSeleccionado);
+        console.log("Producto borrado al carrito:", productoSeleccionado);
+    } else {
+        console.error("Índice de producto fuera de los límites.");
+    }
 }
 
 let productoSeleccionado;
@@ -181,8 +304,6 @@ if (carritoDeComprasGuardado) {
         totalCost += carritoDeCompras[i].price;
     }
     imprimeValorCompra(totalCost);
-
-    console.log("Costo total del carrito de compras:", totalCost);
 } else {
     console.log("No se encontró el carrito de compras en el localStorage.");
 }
@@ -201,17 +322,16 @@ function imprimeValorCompra(totalCost) {
 
     totalCostoCompra.innerHTML += `
             <p class="mb-2">Subtotal</p>
-            <p class="mb-2">$${totalCost}.00</p>
+            <p class="mb-2">$${totalCost}</p>
     `;
 }
 
 let envio = 300;
 let costoConEnvio = totalCost + envio;
-console.log(costoConEnvio);
 
 function imprimeValorCompraConEnvio(costoConEnvio) {
     let totalCostoCompraEnvio = document.getElementById(
-        "contenedor-saldosEnvio"
+        "contenedor-saldos-envio"
     );
 
     if (!totalCostoCompraEnvio) {
@@ -225,17 +345,36 @@ function imprimeValorCompraConEnvio(costoConEnvio) {
 
     totalCostoCompraEnvio.innerHTML += `
             <p class="mb-2">Total (Impuestos incluidos)</p>
-            <p class="mb-2">$${costoConEnvio}.00</p>
+            <p class="mb-2">$${costoConEnvio}</p>
     `;
 
     actualizarCarritoHTML();
 }
 
+actualizarCarsHTML(productsArray);
+imprimeValorCompraConEnvio(costoConEnvio);
+const searchInput = document.getElementById("searchInput");
+
+const handleSearch = (e) => {
+    const searchItern = e.target.value.toLowerCase();
+    const filteredProducts = productsArray.filter((fProducts) =>
+        fProducts.title.toLowerCase().startsWith(searchItern)
+    );
+    actualizarCarsHTML(filteredProducts);
+};
+
+searchInput.addEventListener("keyup", handleSearch);
+
 fetch(url)
     .then((res) => res.json())
     .then((json) => {
-        productsArray = json;
+        allProducts = json;
+        productsArray = allProducts;
+        console.log(allProducts);
 
-        actualizarCarsHTML();
+        actualizarCarsHTML(productsArray);
         imprimeValorCompraConEnvio(costoConEnvio);
+    })
+    .catch((error) => {
+        console.error("Ups, nos quitaron el acceso a la API otra vez.");
     });

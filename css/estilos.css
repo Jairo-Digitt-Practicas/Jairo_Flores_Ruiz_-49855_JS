@@ -56,8 +56,8 @@ body {
 }
 
 .row-cols-1 .col .imagenProducto {
-  max-width: 100%;
-  height: auto;
+  max-width: 200px;
+  height: 250px;
 }
 
 .card {
@@ -66,7 +66,7 @@ body {
   padding: 10px;
 }
 .card img {
-  display: flex;
+  justify-content: center;
   align-items: center;
   max-width: 100%;
   height: auto;
@@ -283,14 +283,21 @@ body {
   margin-inline: 20px;
 }
 
+.hero form {
+  justify-content: center;
+  display: flex;
+  height: 50px;
+  margin-bottom: 0;
+}
+
 .card-header img {
-  width: 100%;
-  height: auto;
+  width: 200px;
+  height: 250px;
 }
 .card-header img .imagenProducto {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 200px;
 }
 
 @media (max-width: 576px) {
@@ -403,4 +410,11 @@ a {
 
 .enlace:hover {
   color: black; /* Color del texto al pasar el mouse sobre el enlace */
+}
+
+/** @format */
+@media (min-width: 1025px) {
+  .h-custom {
+    height: 100vh !important;
+  }
 }/*# sourceMappingURL=estilos.css.map */

@@ -5,8 +5,8 @@ body {
 }
 
 .row-cols-1 .col .imagenProducto {
-    max-width: $tamanio-100;
-    height: $tamanio-auto;
+    max-width: 200px;
+    height: 250px;
 }
 
 .card {
@@ -15,7 +15,7 @@ body {
     padding: $tamanio-10px;
 
     img {
-        display: $display-flexible;
+        justify-content: center;
         align-items: $centrado-componentes;
         max-width: $tamanio-100;
         height: $tamanio-auto;

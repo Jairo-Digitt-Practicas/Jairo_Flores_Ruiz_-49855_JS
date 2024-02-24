@@ -133,7 +133,7 @@
                     alt="headerTienda"
                     class="contentSectionTienda"
                     title="headerTienda" />
-                <h1>Compra todos tus produtos y convierte tu hogar</h1>
+                <h1>Compra todos tus productos y convierte tu hogar</h1>
                 <ins>
                     <h2>
                         <p>
@@ -143,6 +143,17 @@
                             aparatos.
                         </p>
                     </h2>
+                    <form
+                        action="#"
+                        id="busqueda"
+                        method="post"
+                        class="formulario">
+                        <input
+                            class="u-full-width"
+                            type="text"
+                            placeholder="¿Que productos te interesan?"
+                            id="searchInput" />
+                    </form>
                 </ins>
             </section>
             <section>
@@ -360,25 +371,21 @@
                 </ins>
             </div>
         </footer>
-
-        <!-- Incluye Bootstrap JS desde el CDN con su integridad y atributo crossorigin -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-
         <!-- Incluye la biblioteca AOS (Animate on Scroll) desde el CDN -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
         <!-- Incluye la biblioteca toastify para alertas -->
         <script
             type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
         <!-- Inicializa la biblioteca AOS para agregar efectos de animación al desplazarse -->
         <script>
             AOS.init();
         </script>
         <script src="../js/main.js"></script>
+        <!-- Incluye Bootstrap JS desde el CDN con su integridad y atributo crossorigin -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
     </body>
 </html>

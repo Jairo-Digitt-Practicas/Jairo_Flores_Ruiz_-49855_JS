@@ -7,14 +7,23 @@
     margin-inline: $tamanio-20px;
 }
 
+.hero {
+    form {
+        justify-content: center;
+        display: flex;
+        height: 50px;
+        margin-bottom: 0;
+    }
+}
+
 .card-header {
     img {
-        width: $tamanio-100;
-        height: $tamanio-auto;
+        width: 200px;
+        height: 250px;
         .imagenProducto {
             display: $display-flexible;
             align-items: $centrado-componentes;
-            width: $tamanio-100;
+            width: 200px;
         }
     }
 }
