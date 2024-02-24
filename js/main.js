@@ -351,7 +351,6 @@ function imprimeValorCompraConEnvio(costoConEnvio) {
     actualizarCarritoHTML();
 }
 
-actualizarCarsHTML(productsArray);
 imprimeValorCompraConEnvio(costoConEnvio);
 const searchInput = document.getElementById("searchInput");
 
@@ -370,10 +369,9 @@ fetch(url)
     .then((json) => {
         allProducts = json;
         productsArray = allProducts;
-        console.log(allProducts);
 
-        actualizarCarsHTML(productsArray);
         imprimeValorCompraConEnvio(costoConEnvio);
+        actualizarCarsHTML(productsArray);
     })
     .catch((error) => {
         console.error("Ups, nos quitaron el acceso a la API otra vez.");
